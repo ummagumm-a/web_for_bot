@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>IdeaBot</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">    
+</head>
+<body>
+    <!-- Header-Navbar -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo left">IdeaBot</a>
+            <a href="#" class="log-field right">Log In</a>
+        </div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+            <li class="tab"><a href="#new_ideas">New Ideas</a></li>
+            <li class="tab"><a href="#test2">In process</a></li>
+            <li class="tab"><a href="#test3">Performed</a></li>
+            <li class="tab"><a href="#test4">Rejected</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Main contents-->
+
+    <!--New Ideas-->
+    <div id="new_ideas">
+        <div class="row">
+            <div class="col s3"></div>
+            <div class="col s6">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">First</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                            <label for="textarea1">Leave your comment...</label>
+                                        </div>
+                                    </div>
+                                </form>
+                                
+                                <form action="#">
+                                    <span>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>Accept</span>
+                                        </label>
+                                    </span>
+                
+                                    <span>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span style="margin-left:2%">Reject</span>
+                                        </label>
+                                    </span>
+                
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="col s4"></div>
+        </div>
+    </div>
+
+
+    
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <script>
+        // Script for Header-Navbar
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, options);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+
+        // Script for Main Contents
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems, options);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function() {
+            $('.collapsible').collapsible();
+        });
+
+        // For comment section
+        $(document).ready(function() {
+            $('input#input_text, textarea#textarea2').characterCounter();
+        });
+    </script>
+</body>
+</html>
